@@ -14,7 +14,9 @@
   (format t "Error during warm initialization:~%")
   (format t "~A~%" condition)
   (mezzano.supervisor:panic (format nil "~A" condition)))
+  
 (setf mezzano.debug:*global-debugger* 'ipl-debugger)
+(format t "IPL begin~%")
 
 ;; Fast eval mode.
 (setf sys.int::*eval-hook* 'mezzano.fast-eval:eval-in-lexenv)
